@@ -6,7 +6,7 @@ part 'menu_icon.g.dart';
 
 @widget
 Widget menuIcon(BuildContext context, {Color color}) {
-  const double _length = 48;
+  const double _length = 24;
 
   return SizedBox(
     width: _length,
