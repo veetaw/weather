@@ -32,7 +32,8 @@ class MenuIconPainter extends CustomPainter {
     this.length, {
     this.color = Colors.black,
     double secondLineLength,
-  }) : this.secondLineLength =
+  })  : assert(length != null),
+        this.secondLineLength =
             secondLineLength == null ? length / 2 : secondLineLength;
 
   @override
