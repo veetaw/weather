@@ -1,16 +1,12 @@
-# weather
+# Yet another weather forecast app
+> [Original Design](https://dribbble.com/shots/6556204-Weather-App-Forecast-Weekly-Chart)
 
-A new Flutter project.
+# Why
+This is an attemp to create an application with [this](https://dribbble.com/shots/6556204-Weather-App-Forecast-Weekly-Chart) beautiful design with [flutter](https://flutter.dev).
 
-## Getting Started
+# Render Image
+![render image](https://cdn.dribbble.com/users/2168386/screenshots/6556204/weather_2x.png)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+# Authors
+- Design: [Sandro Tavartkiladze](https://dribbble.com/tavdro)
+- Code: [Vito](github.com/veetaw)
