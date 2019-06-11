@@ -29,6 +29,7 @@
 .metadata
 pubspec.lock
 .packages.generated
+pubspec.lock
 
 # Android related
 **/android/**/gradle-wrapper.jar
