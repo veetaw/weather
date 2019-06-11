@@ -2,7 +2,7 @@
 > [Original Design](https://dribbble.com/shots/6556204-Weather-App-Forecast-Weekly-Chart)
 
 # Why
-This is an attemp to create an application with [this](https://dribbble.com/shots/6556204-Weather-App-Forecast-Weekly-Chart) beautiful design with [flutter](https://flutter.dev).
+This is an attempt to create an application with [this](https://dribbble.com/shots/6556204-Weather-App-Forecast-Weekly-Chart) beautiful design with [Flutter](https://flutter.dev).
 
 # Render Image
 ![render image](https://cdn.dribbble.com/users/2168386/screenshots/6556204/weather_2x.png)
