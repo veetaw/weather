@@ -5,16 +5,17 @@ import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 part 'menu_icon.g.dart';
 
 @widget
-Widget menuIcon(BuildContext context, {Color color}) {
-  const double _length = 24;
-
-  return SizedBox(
-    width: _length,
-    child: CustomPaint(
-      painter: MenuIconPainter(
-        _length,
-        color: color ?? Theme.of(context).accentIconTheme.color,
-      ),
+Widget menuIcon(
+  BuildContext context, {
+  Color color,
+  double length,
+  double secondLineLength,
+}) {
+  return CustomPaint(
+    painter: MenuIconPainter(
+      length ?? 24, // functional_widget_annotation does not support default values
+      secondLineLength: secondLineLength,
+      color: color ?? Theme.of(context).accentIconTheme.color,
     ),
   );
 }
