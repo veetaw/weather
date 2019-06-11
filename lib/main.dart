@@ -10,7 +10,7 @@ class WeatherApp extends StatelessWidget {
     return MaterialApp(
       onGenerateRoute: (RouteSettings route) {
         // TODO: handle unknown route
-        switch(route.name) {
+        switch (route.name) {
           case '/':
             return MaterialPageRoute(builder: (_) => HomePage());
         }
