@@ -4,6 +4,7 @@ import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:weather/homepage/weather_info_column.dart';
+import 'package:weather/homepage/additional_info.dart';
 import 'package:weather/ui_models/menu_icon.dart';
 import 'package:weather/ui_models/custom_rectangle.dart';
 
@@ -209,125 +210,6 @@ Widget clickableText(
           fontWeight: FontWeight.w500,
         ),
       ),
-    ),
-  );
-}
-
-@widget
-Widget additionalInfo(
-  BuildContext context, {
-  @required String wind,
-  @required String humidity,
-  @required String visibility,
-  @required String uv,
-}) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: <Widget>[
-      Text(
-        "Additional Info",
-        style: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      Padding(
-        padding: EdgeInsets.only(top: 32),
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          AdditionalInfoTitleColumn(
-            upper: "Wind",
-            lower: "Visibility",
-          ),
-          AdditionalInfoSubtitleColumn(
-            upper: wind,
-            lower: visibility,
-          ),
-          AdditionalInfoTitleColumn(
-            upper: "Humidity",
-            lower: "UV",
-          ),
-          AdditionalInfoSubtitleColumn(
-            upper: humidity,
-            lower: uv,
-          ),
-        ],
-      ),
-    ],
-  );
-}
-
-@widget
-Widget additionalInfoTitleColumn(
-  BuildContext context, {
-  @required String upper,
-  @required String lower,
-}) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      AdditionalInfoTitle(
-        title: upper,
-      ),
-      Padding(
-        padding: EdgeInsets.only(top: 16),
-      ),
-      AdditionalInfoTitle(
-        title: lower,
-      ),
-    ],
-  );
-}
-
-@widget
-Widget additionalInfoSubtitleColumn(
-  BuildContext context, {
-  @required String upper,
-  @required String lower,
-}) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      AdditionalInfoSubtitle(
-        subtitle: upper,
-      ),
-      Padding(
-        padding: EdgeInsets.only(top: 16),
-      ),
-      AdditionalInfoSubtitle(
-        subtitle: lower,
-      ),
-    ],
-  );
-}
-
-@widget
-Widget additionalInfoTitle(
-  BuildContext context, {
-  @required String title,
-}) {
-  return Text(
-    title,
-    style: TextStyle(
-      fontSize: 15,
-      fontWeight: FontWeight.w600,
-    ),
-  );
-}
-
-@widget
-Widget additionalInfoSubtitle(
-  BuildContext context, {
-  @required String subtitle,
-}) {
-  return Text(
-    subtitle,
-    style: TextStyle(
-      fontSize: 15,
-      fontWeight: FontWeight.w600,
-      color: Colors.black.withAlpha(90),
     ),
   );
 }
