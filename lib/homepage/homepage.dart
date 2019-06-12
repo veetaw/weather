@@ -35,17 +35,26 @@ class HomePage extends StatelessWidget {
                 key: _indicatorIconKey,
               ),
             ),
+            Padding(
+              padding: EdgeInsets.only(top: 16),
+            ),
             Center(
               child: TemperatureText(
                 temperature: "39,9°",
                 key: _temperatureTextKey,
               ),
             ),
+            Padding(
+              padding: EdgeInsets.only(top: 16),
+            ),
             Center(
               child: LocationText(
                 location: "Tbilisi, Georgia",
                 key: _locationTextKey,
               ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 32),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -70,6 +79,9 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             ),
+            Padding(
+              padding: EdgeInsets.only(top: 16),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -77,7 +89,7 @@ class HomePage extends StatelessWidget {
                   backgroundColor: Color(0xffF38757),
                   foregroundColor: Color(0xffDF7080),
                   indicatorType: IndicatorType.start,
-                  margin: EdgeInsets.symmetric(horizontal: 4),
+                  margin: EdgeInsets.symmetric(horizontal: 5),
                   key: _indicatorRectangleKeys[0],
                   child: WeatherInfoColumn(
                     icon: FontAwesomeIcons.cloudRain,
@@ -89,7 +101,7 @@ class HomePage extends StatelessWidget {
                   backgroundColor: Color(0xff775B8A),
                   foregroundColor: Color(0xffB66293),
                   indicatorType: IndicatorType.middle,
-                  margin: EdgeInsets.symmetric(horizontal: 4),
+                  margin: EdgeInsets.symmetric(horizontal: 5),
                   key: _indicatorRectangleKeys[1],
                   child: WeatherInfoColumn(
                     icon: FontAwesomeIcons.sun,
@@ -101,7 +113,7 @@ class HomePage extends StatelessWidget {
                   backgroundColor: Color(0xff2C4758),
                   foregroundColor: Color(0xff475678),
                   indicatorType: IndicatorType.end,
-                  margin: EdgeInsets.symmetric(horizontal: 4),
+                  margin: EdgeInsets.symmetric(horizontal: 5),
                   key: _indicatorRectangleKeys[2],
                   child: WeatherInfoColumn(
                     icon: FontAwesomeIcons.moon,
@@ -110,6 +122,15 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 50),
+              child: AdditionalInfo(
+                wind: "12 m/h",
+                visibility: "25 km",
+                humidity: "55 %",
+                uv: "1",
+              ),
             ),
           ],
         ),
@@ -188,6 +209,125 @@ Widget clickableText(
           fontWeight: FontWeight.w500,
         ),
       ),
+    ),
+  );
+}
+
+@widget
+Widget additionalInfo(
+  BuildContext context, {
+  @required String wind,
+  @required String humidity,
+  @required String visibility,
+  @required String uv,
+}) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: <Widget>[
+      Text(
+        "Additional Info",
+        style: TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      Padding(
+        padding: EdgeInsets.only(top: 32),
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          AdditionalInfoTitleColumn(
+            upper: "Wind",
+            lower: "Visibility",
+          ),
+          AdditionalInfoSubtitleColumn(
+            upper: wind,
+            lower: visibility,
+          ),
+          AdditionalInfoTitleColumn(
+            upper: "Humidity",
+            lower: "UV",
+          ),
+          AdditionalInfoSubtitleColumn(
+            upper: humidity,
+            lower: uv,
+          ),
+        ],
+      ),
+    ],
+  );
+}
+
+@widget
+Widget additionalInfoTitleColumn(
+  BuildContext context, {
+  @required String upper,
+  @required String lower,
+}) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      AdditionalInfoTitle(
+        title: upper,
+      ),
+      Padding(
+        padding: EdgeInsets.only(top: 16),
+      ),
+      AdditionalInfoTitle(
+        title: lower,
+      ),
+    ],
+  );
+}
+
+@widget
+Widget additionalInfoSubtitleColumn(
+  BuildContext context, {
+  @required String upper,
+  @required String lower,
+}) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      AdditionalInfoSubtitle(
+        subtitle: upper,
+      ),
+      Padding(
+        padding: EdgeInsets.only(top: 16),
+      ),
+      AdditionalInfoSubtitle(
+        subtitle: lower,
+      ),
+    ],
+  );
+}
+
+@widget
+Widget additionalInfoTitle(
+  BuildContext context, {
+  @required String title,
+}) {
+  return Text(
+    title,
+    style: TextStyle(
+      fontSize: 15,
+      fontWeight: FontWeight.w600,
+    ),
+  );
+}
+
+@widget
+Widget additionalInfoSubtitle(
+  BuildContext context, {
+  @required String subtitle,
+}) {
+  return Text(
+    subtitle,
+    style: TextStyle(
+      fontSize: 15,
+      fontWeight: FontWeight.w600,
+      color: Colors.black.withAlpha(90),
     ),
   );
 }
