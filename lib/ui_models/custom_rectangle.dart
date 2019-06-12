@@ -21,7 +21,7 @@ Widget customRectangle(
   return InkWell(
     onTap: onTap,
     child: SizedBox(
-      width: 100,
+      width: 120,
       height: 200,
       child: Card(
         shape: RoundedRectangleBorder(
