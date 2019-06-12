@@ -51,22 +51,3 @@ class ClickableText extends StatelessWidget {
   Widget build(BuildContext _context) =>
       clickableText(_context, text: text, onTap: onTap, enabled: enabled);
 }
-
-class RectangleContentWidget extends StatelessWidget {
-  const RectangleContentWidget(
-      {Key key,
-      @required this.title,
-      @required this.icon,
-      @required this.subtitle})
-      : super(key: key);
-
-  final String title;
-
-  final IconData icon;
-
-  final String subtitle;
-
-  @override
-  Widget build(BuildContext _context) => rectangleContentWidget(_context,
-      title: title, icon: icon, subtitle: subtitle);
-}

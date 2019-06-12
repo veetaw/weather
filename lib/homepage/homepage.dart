@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'package:weather/homepage/weather_info_column.dart';
 import 'package:weather/ui_models/menu_icon.dart';
-import 'package:weather/ui_models/custom_rectangle.dart' show CustomRectangle;
+import 'package:weather/ui_models/custom_rectangle.dart';
 
 part 'homepage.g.dart';
 
@@ -15,8 +17,6 @@ final GlobalKey _indicatorIconKey = GlobalKey();
 final List<Key> _clickableTextKeys = List.generate(3, (_) => GlobalKey());
 final List<Key> _indicatorRectangleKeys = List.generate(3, (_) => GlobalKey());
 
-enum IndicatorType { start, middle, end }
-
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
       backgroundColor: Color(0xffE5E5E5),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
@@ -79,7 +79,11 @@ class HomePage extends StatelessWidget {
                   indicatorType: IndicatorType.start,
                   margin: EdgeInsets.symmetric(horizontal: 4),
                   key: _indicatorRectangleKeys[0],
-                  child: null,
+                  child: WeatherInfoColumn(
+                    icon: FontAwesomeIcons.cloudRain,
+                    hour: "18:00",
+                    temperature: "12°",
+                  ),
                 ),
                 CustomRectangle(
                   backgroundColor: Color(0xff775B8A),
@@ -87,6 +91,11 @@ class HomePage extends StatelessWidget {
                   indicatorType: IndicatorType.middle,
                   margin: EdgeInsets.symmetric(horizontal: 4),
                   key: _indicatorRectangleKeys[1],
+                  child: WeatherInfoColumn(
+                    icon: FontAwesomeIcons.sun,
+                    hour: "19:00",
+                    temperature: "19°",
+                  ),
                 ),
                 CustomRectangle(
                   backgroundColor: Color(0xff2C4758),
@@ -94,6 +103,11 @@ class HomePage extends StatelessWidget {
                   indicatorType: IndicatorType.end,
                   margin: EdgeInsets.symmetric(horizontal: 4),
                   key: _indicatorRectangleKeys[2],
+                  child: WeatherInfoColumn(
+                    icon: FontAwesomeIcons.moon,
+                    hour: "22:00",
+                    temperature: "12°",
+                  ),
                 ),
               ],
             ),
@@ -175,31 +189,5 @@ Widget clickableText(
         ),
       ),
     ),
-  );
-}
-
-@widget
-Widget rectangleContentWidget(
-  BuildContext context, {
-  @required String title,
-  @required IconData icon,
-  @required String subtitle,
-}) {
-  return Column(
-    mainAxisAlignment: MainAxisAlignment.spaceAround,
-    children: <Widget>[
-      Text(
-        title,
-        style: TextStyle(color: Colors.white),
-      ),
-      Icon(
-        icon,
-        color: Colors.white,
-      ),
-      Text(
-        subtitle,
-        style: TextStyle(color: Colors.white),
-      ),
-    ],
   );
 }
