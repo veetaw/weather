@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 
-import 'package:weather/homepage/homepage.dart' show IndicatorType;
-
 part 'custom_rectangle.g.dart';
+
+enum IndicatorType { start, middle, end }
 
 @widget
 Widget customRectangle(
@@ -25,7 +25,8 @@ Widget customRectangle(
       height: 200,
       child: Card(
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(_borderRadius)),
+          borderRadius: BorderRadius.circular(_borderRadius),
+        ),
         color: backgroundColor,
         margin: margin ?? const EdgeInsets.all(0),
         child: CustomPaint(
