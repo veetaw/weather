@@ -9,6 +9,7 @@ dependencies:
   flutter:
     sdk: flutter
   functional_widget_annotation: ^0.5.0
+  font_awesome_flutter: ^8.4.0
 
 dev_dependencies:
   flutter_test:
