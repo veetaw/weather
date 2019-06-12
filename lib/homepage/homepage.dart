@@ -23,6 +23,29 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(context, "Weather forecast"),
+      bottomSheet: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          FlatButton.icon(
+            icon: Icon(FontAwesomeIcons.home),
+            label: Text("Home"),
+            onPressed: () {},
+          ),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              IconButton(
+                icon: Icon(FontAwesomeIcons.cloudSunRain),
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: Icon(Icons.settings),
+                onPressed: () {},
+              ),
+            ],
+          ),
+        ],
+      ),
       backgroundColor: Color(0xffE5E5E5),
       body: SingleChildScrollView(
         child: Column(
