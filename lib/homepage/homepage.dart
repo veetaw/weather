@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:weather/homepage/weather_info_column.dart';
 import 'package:weather/homepage/additional_info.dart';
+import 'package:weather/homepage/custom_bottom_appbar.dart';
 import 'package:weather/ui_models/menu_icon.dart';
 import 'package:weather/ui_models/custom_rectangle.dart';
 
@@ -23,29 +24,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(context, "Weather forecast"),
-      bottomSheet: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          FlatButton.icon(
-            icon: Icon(FontAwesomeIcons.home),
-            label: Text("Home"),
-            onPressed: () {},
-          ),
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              IconButton(
-                icon: Icon(FontAwesomeIcons.cloudSunRain),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: Icon(Icons.settings),
-                onPressed: () {},
-              ),
-            ],
-          ),
-        ],
-      ),
+      bottomNavigationBar: CustomBottomAppBar(),
       backgroundColor: Color(0xffE5E5E5),
       body: SingleChildScrollView(
         child: Column(
