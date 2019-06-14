@@ -6,6 +6,9 @@ part 'custom_rectangle.g.dart';
 
 enum IndicatorType { start, middle, end }
 
+const double borderRadius = 24;
+const double bigBorderRadius = 50;
+
 @widget
 Widget customRectangle(
   BuildContext context, {
@@ -16,8 +19,6 @@ Widget customRectangle(
   EdgeInsetsGeometry margin,
   Widget child,
 }) {
-  final double _borderRadius = 24;
-  final double _bigBorderRadius = 50;
   return InkWell(
     onTap: onTap,
     child: SizedBox(
@@ -25,15 +26,15 @@ Widget customRectangle(
       height: 200,
       child: Card(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(_borderRadius),
+          borderRadius: BorderRadius.circular(borderRadius),
         ),
         color: backgroundColor,
         margin: margin ?? const EdgeInsets.all(0),
         child: CustomPaint(
           painter: _CustomRectanglePainter(
-            borderRadius: _borderRadius,
+            borderRadius: borderRadius,
             bigCornerBorder:
-                indicatorType != IndicatorType.middle ? _bigBorderRadius : 0,
+                indicatorType != IndicatorType.middle ? bigBorderRadius : 0,
             backgroundColor: foregroundColor,
             isOnTop: indicatorType != IndicatorType.start,
           ),
