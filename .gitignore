@@ -29,7 +29,7 @@
 .metadata
 pubspec.lock
 .packages.generated
-pubspec.lock
+lib/**/*.g.dart
 
 # Android related
 **/android/**/gradle-wrapper.jar
