@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:weather/common/color_scheme.dart' as colors;
 
 import 'package:weather/homepage/weather_info_column.dart';
 import 'package:weather/homepage/additional_info.dart';
@@ -10,8 +11,6 @@ import 'package:weather/ui_models/menu_icon.dart';
 import 'package:weather/ui_models/custom_rectangle.dart';
 
 part 'homepage.g.dart';
-
-final Color _black = Color(0xff121825);
 
 final GlobalKey _temperatureTextKey = GlobalKey();
 final GlobalKey _locationTextKey = GlobalKey();
@@ -25,7 +24,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: _buildAppBar(context, "Weather forecast"),
       bottomNavigationBar: CustomBottomAppBar(),
-      backgroundColor: Color(0xffE5E5E5),
+      backgroundColor: colors.grayBackground,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -89,8 +88,8 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 CustomRectangle(
-                  backgroundColor: Color(0xffF38757),
-                  foregroundColor: Color(0xffDF7080),
+                  backgroundColor: colors.orange,
+                  foregroundColor: colors.red,
                   indicatorType: IndicatorType.start,
                   margin: EdgeInsets.symmetric(horizontal: 5),
                   key: _indicatorRectangleKeys[0],
@@ -101,8 +100,8 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 CustomRectangle(
-                  backgroundColor: Color(0xff775B8A),
-                  foregroundColor: Color(0xffB66293),
+                  backgroundColor: colors.purple,
+                  foregroundColor: colors.violet,
                   indicatorType: IndicatorType.middle,
                   margin: EdgeInsets.symmetric(horizontal: 5),
                   key: _indicatorRectangleKeys[1],
@@ -113,8 +112,8 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 CustomRectangle(
-                  backgroundColor: Color(0xff2C4758),
-                  foregroundColor: Color(0xff475678),
+                  backgroundColor: colors.darkBlue,
+                  foregroundColor: colors.blue,
                   indicatorType: IndicatorType.end,
                   margin: EdgeInsets.symmetric(horizontal: 5),
                   key: _indicatorRectangleKeys[2],
@@ -150,7 +149,7 @@ class HomePage extends StatelessWidget {
       title: Text(title),
       textTheme: Theme.of(context).primaryTextTheme.copyWith(
             title: Theme.of(context).primaryTextTheme.title.copyWith(
-                  color: _black,
+                  color: colors.black,
                   fontSize: 16,
                 ),
           ),
@@ -178,7 +177,7 @@ Widget locationText(BuildContext context, {@required String location}) {
     location,
     style: TextStyle(
       fontSize: 20,
-      color: _black.withAlpha(130),
+      color: colors.secondaryBlack,
       fontWeight: FontWeight.w500,
     ),
   );
@@ -208,7 +207,7 @@ Widget clickableText(
         text,
         style: TextStyle(
           fontSize: 16,
-          color: _black.withAlpha(enabled ? 255 : 90),
+          color: colors.black.withAlpha(enabled ? 255 : 90),
           fontWeight: FontWeight.w500,
         ),
       ),

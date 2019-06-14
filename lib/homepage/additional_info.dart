@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 
+import 'package:weather/common/color_scheme.dart' as colors;
+
 part 'additional_info.g.dart';
 
 @widget
@@ -118,7 +120,7 @@ Widget additionalInfoSubtitle(
     style: TextStyle(
       fontSize: 15,
       fontWeight: FontWeight.w600,
-      color: Colors.black.withAlpha(90),
+      color: colors.grayBlack,
     ),
   );
 }

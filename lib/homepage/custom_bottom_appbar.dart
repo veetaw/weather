@@ -3,23 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'package:weather/common/color_scheme.dart' as colors;
+
 part 'custom_bottom_appbar.g.dart';
 
 @widget
 Widget customBottomAppBar(BuildContext context) {
   return Container(
-    color: Color(0xffE5E5E5),
+    color: colors.grayBackground,
     padding: EdgeInsets.only(left: 16, right: 16, bottom: 10),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         FlatButton.icon(
-          icon: Icon(FontAwesomeIcons.home, color: Colors.black.withAlpha(90)),
+          icon: Icon(FontAwesomeIcons.home, color: colors.grayBlack),
           label: Text(
             "Home",
             style: TextStyle(
               fontWeight: FontWeight.w600,
-              color: Colors.black.withAlpha(90),
+              color: colors.grayBlack,
             ),
           ),
           onPressed: () {},
@@ -32,7 +34,7 @@ Widget customBottomAppBar(BuildContext context) {
               onPressed: () {},
             ),
             IconButton(
-              icon: Icon(Icons.settings, color: Colors.black.withAlpha(90)),
+              icon: Icon(Icons.settings, color: colors.grayBlack),
               onPressed: () {},
             ),
           ],

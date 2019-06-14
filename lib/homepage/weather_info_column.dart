@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 
+import 'package:weather/common/color_scheme.dart' as colors;
+
 part 'weather_info_column.g.dart';
 
 @widget
@@ -16,15 +18,15 @@ Widget weatherInfoColumn(
     children: <Widget>[
       Text(
         hour,
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(color: colors.white),
       ),
       Icon(
         icon,
-        color: Colors.white,
+        color: colors.white,
       ),
       Text(
         temperature,
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(color: colors.white),
       ),
     ],
   );
