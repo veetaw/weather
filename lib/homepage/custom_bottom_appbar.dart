@@ -10,7 +10,7 @@ part 'custom_bottom_appbar.g.dart';
 @widget
 Widget customBottomAppBar(BuildContext context) {
   return Container(
-    color: colors.grayBackground,
+    color: colors.white,
     padding: EdgeInsets.only(left: 16, right: 16, bottom: 10),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,

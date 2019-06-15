@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:weather/common/color_scheme.dart' as colors;
+import 'package:weather/common/widget_position.dart';
 
 import 'package:weather/homepage/weather_info_column.dart';
 import 'package:weather/homepage/additional_info.dart';
@@ -24,7 +25,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: _buildAppBar(context, "Weather forecast"),
       bottomNavigationBar: CustomBottomAppBar(),
-      backgroundColor: colors.grayBackground,
+      backgroundColor: colors.white,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
