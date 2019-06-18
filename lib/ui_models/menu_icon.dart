@@ -13,7 +13,8 @@ Widget menuIcon(
 }) {
   return CustomPaint(
     painter: MenuIconPainter(
-      length ?? 24, // functional_widget_annotation does not support default values
+      length ??
+          24, // functional_widget_annotation does not support default values
       secondLineLength: secondLineLength,
       color: color ?? Theme.of(context).accentIconTheme.color,
     ),
