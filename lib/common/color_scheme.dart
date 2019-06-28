@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart' show Color;
 
-const Color grayBackground = Color(0xffE5E5E5);
+const Color grayBackground = Color(0x69E5E5E5);
 const Color whiteBackground = Color(0xffFFFFFF);
 const Color yellow = Color(0xffE4B87D);
 const Color black = Color(0xff121825);

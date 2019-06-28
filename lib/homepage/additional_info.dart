@@ -13,17 +13,20 @@ Widget additionalInfo(
   @required String humidity,
   @required String visibility,
   @required String uv,
+  bool hasTitle = true,
 }) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
-      Text(
-        "Additional Info",
-        style: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
+      hasTitle
+          ? Text(
+              "Additional Info",
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            )
+          : Container(),
       Padding(
         padding: EdgeInsets.only(top: 32),
       ),
