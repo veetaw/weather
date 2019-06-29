@@ -1,5 +1,3 @@
-// TODO(veetaw): refactor
-
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -59,8 +57,12 @@ class TopInfos extends StatelessWidget {
   final String maxTemperature;
   final String minTemperature;
 
+  static const double _horizontalPadding = 50;
+
   @override
   Widget build(BuildContext context) {
+    final Size deviceSize = MediaQuery.of(context).size;
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       mainAxisSize: MainAxisSize.max,
@@ -70,8 +72,8 @@ class TopInfos extends StatelessWidget {
             appBar,
             ConstrainedBox(
               constraints: BoxConstraints(
-                minWidth: MediaQuery.of(context).size.width,
-                minHeight: MediaQuery.of(context).size.height / 3,
+                minWidth: deviceSize.width,
+                minHeight: deviceSize.height / 3,
               ),
               child: Container(
                 color: colors.grayBackground,
@@ -79,9 +81,9 @@ class TopInfos extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Padding(
+                    const Padding(
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 50,
+                        horizontal: _horizontalPadding,
                         vertical: 32,
                       ),
                       child: Text(
@@ -94,7 +96,7 @@ class TopInfos extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 50,
+                        horizontal: _horizontalPadding,
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -111,7 +113,7 @@ class TopInfos extends StatelessWidget {
                                 padding: const EdgeInsets.only(left: 8),
                                 child: Text(
                                   dayOfTheWeek,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 22,
                                     color: colors.black,
                                     fontWeight: FontWeight.bold,
@@ -126,7 +128,7 @@ class TopInfos extends StatelessWidget {
                                 padding: const EdgeInsets.only(right: 8),
                                 child: Text(
                                   maxTemperature,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 20,
                                     color: colors.black,
                                     fontWeight: FontWeight.bold,
@@ -151,8 +153,8 @@ class TopInfos extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(
-                        left: 50,
-                        right: 50,
+                        left: _horizontalPadding,
+                        right: _horizontalPadding,
                         bottom: 32,
                         top: 10,
                       ),
@@ -217,7 +219,7 @@ class HourlyForecastItem extends StatelessWidget {
       dense: true,
       leading: Text(
         minTemperature,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 16,
           color: colors.black,
           fontWeight: FontWeight.bold,
@@ -225,7 +227,7 @@ class HourlyForecastItem extends StatelessWidget {
       ), // min
       title: Text(
         weather,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 22,
           color: colors.black,
           fontWeight: FontWeight.w500,
@@ -233,7 +235,7 @@ class HourlyForecastItem extends StatelessWidget {
       ), // text
       trailing: Text(
         maxTemperature,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 20,
           color: colors.black,
           fontWeight: FontWeight.w500,
@@ -286,7 +288,7 @@ class WeeklyForecastItem extends StatelessWidget {
           color: active ? colors.black : colors.grayBlack,
         ),
         Padding(
-          padding: EdgeInsets.all(5),
+          padding: const EdgeInsets.all(5),
         ),
         Text('S'),
       ],
